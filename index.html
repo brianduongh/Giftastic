@@ -9,8 +9,11 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-  <input type="text" id="searchTerm">
-  <button type="submit" id="searchBtn">search</button>
+  <form>
+    <input type="text" id="searchTerm">
+    <input type="submit" id="searchBtn" value="search">
+  </form>
+  <div id="btn-bank"></div>
   <!-- jQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
@@ -19,14 +22,27 @@
     function displayGifs() {
     };
 
+    // Render button with word inside
     function renderBtns() {
-      
+      // Empties contents of button bank
+      $("#btn-bank").empty();
+      // For each item in the word array, make a button
+      num.forEach(function(number) {
+        var wordBtn = $("<button>");
+        wordBtn.addClass("word-btn");
+        wordBtn.attr("data-name", number);
+        wordBtn.text(number);
+        $("#btn-bank").append(wordBtn);
+        console.log(number);
+      })
     };
 
     // On button click, search for term
     $("#searchBtn").on("click", function(event) {
       event.preventDefault();
       var word = $("#searchTerm").val().trim();
+      num.push(word);
+      renderBtns();
       console.log(word);
     });
 
