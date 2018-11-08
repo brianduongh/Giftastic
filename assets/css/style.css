@@ -1,0 +1,51 @@
+body, html {
+  height: 100%;
+}
+
+body {
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  padding: 20px;
+}
+
+#title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+#btn-bank {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}
+
+#gif-bank {
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+#search-form #search-term {
+  border: 2px solid black;
+}
+
+#search-form #search-btn {
+  border: 2px solid black;
+}
+
+.word-btn {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 2.5px 5px;
+}
+
+.gif-img {
+  max-width: 100%;
+  margin: 5px 0px;
+}

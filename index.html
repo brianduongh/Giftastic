@@ -7,34 +7,36 @@
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <style>
-    .gif p {
-      position:absolute;
-    }
-  </style>
 </head>
 <body>
-  <form>
-    <input type="text" id="searchTerm">
-    <input type="submit" id="searchBtn" value="search">
-  </form>
-  <div id="btn-bank"></div>
-  <div id="gif-bank">
-    <div class="gif">
-      <p>Rating: PG</p>
-      <img src="https://media3.giphy.com/media/Y01jP8QeLOox2/200.gif">
+  <div class=container>
+  <div id="title">Anime GIF Generator</div>
+    <div id="btn-bank"></div>
+    <form id="search-form">
+      <input type="text" id="search-term">
+      <input type="submit" id="search-btn" value="search">
+    </form>
+    <div id="gif-bank">
+      <div class="gif">
+        <p>Rating: PG</p>
+        <img src="https://media3.giphy.com/media/Y01jP8QeLOox2/200.gif">
+      </div>
     </div>
   </div>
   <!-- jQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var num = [1,2,3];
+    var num = ["Bleach", "One Piece", "Naruto"];
     // Display gifs
     function displayGifs() {
       // Set API keys and variables
       var apiKey = 'GcvdVseivVehXTeUt9Onvn2JlpxuZEq6';
       var searchTerm = $(this).attr("data-name");
       var queryUrl = "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + apiKey + "&limit=10";
+      // Empty previous gifs
+      $("#gif-bank").empty();
+
+      // Make a request to API
       $.ajax({
         url: queryUrl,
         method: "GET"
@@ -82,12 +84,15 @@
     };
 
     // On search button click, search for term
-    $("#searchBtn").on("click", function(event) {
+    $("#search-btn").on("click", function(event) {
       event.preventDefault();
-      var word = $("#searchTerm").val().trim();
-      num.push(word);
-      renderBtns();
-      $("#searchTerm").val("");
+      var word = $("#search-term").val().trim();
+      // If input is not empty
+      if (word !== "") {
+        num.push(word);
+        renderBtns();
+        $("#search-term").val("");
+      }
     });
 
     // User clicks on gif
