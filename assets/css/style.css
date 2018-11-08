@@ -3,6 +3,7 @@ body, html {
 }
 
 body {
+  background: #62a1a9;
 }
 
 .container {
@@ -20,6 +21,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 20px 0px;
+  justify-content: center;
 }
 
 #gif-bank {
@@ -48,4 +50,35 @@ body {
 .gif-img {
   max-width: 100%;
   margin: 5px 0px;
+}
+
+@media only screen and (min-width: 576px) {
+  body {
+    color:blue;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    color:red;
+  }
+  #gif-bank {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .gif {
+    margin: 0 5px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    color:yellow;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    color:green;
+  }
 }

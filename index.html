@@ -17,16 +17,16 @@
       <input type="submit" id="search-btn" value="search">
     </form>
     <div id="gif-bank">
-      <div class="gif">
+      <!-- <div class="gif">
         <p>Rating: PG</p>
         <img src="https://media3.giphy.com/media/Y01jP8QeLOox2/200.gif">
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- jQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var num = ["Bleach", "One Piece", "Naruto"];
+    var num = ["Bleach", "Hitman Reborn", "Naruto", "Dragon Ball", "My Hero Academia"];
     // Display gifs
     function displayGifs() {
       // Set API keys and variables
@@ -43,7 +43,6 @@
       }).then(function(response) {
         // Display X amounts of gifs specified with rating
         var results = response.data;
-        console.log(results[0])
         results.forEach(function(result) {
           // Create a new div with rating and image
           var gifDiv = $("<div>");
@@ -60,12 +59,12 @@
           });
           gif.addClass("gif-img");
           // Attach both to gifDiv
-          gifDiv.append(gifRating);
           gifDiv.append(gif);
+          gifDiv.append(gifRating);
           gifDiv.addClass("gif");
           // Add gifDivs to gif-bank
           $("#gif-bank").prepend(gifDiv);
-        })
+        });
       })
     };
 
@@ -80,7 +79,7 @@
         wordBtn.attr("data-name", number);
         wordBtn.text(number);
         $("#btn-bank").append(wordBtn);
-      })
+      });
     };
 
     // On search button click, search for term
@@ -114,7 +113,7 @@
       }
     })
 
-    // On click word-btn, display gifs
+    // User clicks on word button
     $(document).on("click", ".word-btn", displayGifs);
 
     renderBtns();
