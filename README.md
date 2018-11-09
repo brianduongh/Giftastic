@@ -4,7 +4,7 @@ An anime-themed gif generator built using jQuery and GIPHY's API. This project w
 
 ## Features
 
-Users can search for any category of gifs and populate a button. These buttons can be clicked to display 10 gifs of the term in the button.
+Users can search for any category of gifs and populate a button. These buttons can be clicked to display 10 gifs of the term in the button. Each gif can be clicked which will cause it to animate.
 
 ## Built With
 
