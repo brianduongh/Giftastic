@@ -3,7 +3,9 @@ body, html {
 }
 
 body {
-  background: #62a1a9;
+  font-family: 'Rubik', sans-serif;
+  background: #1a2865;
+  color: #ff7e00;
 }
 
 .container {
@@ -15,6 +17,7 @@ body {
 #title {
   text-align: center;
   font-size: 2.5rem;
+  color: 	#ff749e;
 }
 
 #btn-bank {
@@ -24,25 +27,43 @@ body {
   justify-content: center;
 }
 
-#gif-bank {
-}
-
+/* Search Form */
 #search-form {
   display: flex;
   justify-content: center;
   margin: 20px 0px;
+  flex-flow: row wrap;
 }
 
 #search-form #search-term {
-  border: 2px solid black;
+  display: block;
+  width: 75%;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid #31d9a5;
+  padding: 10px 15px;
+  background: transparent;
+  font-size: 12pt;
+  margin-bottom: 3px;
+  color: #fff;
 }
 
 #search-form #search-btn {
-  border: 2px solid black;
+  font-size: 1.2rem;
+  background: transparent;
+  color: #31d9a5;
+  border: 2px solid #31d9a5;
+  border-radius: 0px;
+  margin: 0 0 3px 0;
+  padding: 0px 10px;
 }
 
+/* Buttons */
 .word-btn {
-  border: 2px solid black;
+  font-size: 1.2rem;
+  background: transparent;
+  color: #31d9a5;
+  border: 2px solid #31d9a5;
   border-radius: 5px;
   margin: 2.5px 5px;
 }
@@ -52,15 +73,9 @@ body {
   margin: 5px 0px;
 }
 
-@media only screen and (min-width: 576px) {
-  body {
-    color:blue;
-  }
-}
 
 @media only screen and (min-width: 768px) {
   body {
-    color:red;
   }
   #gif-bank {
     display: flex;
@@ -69,16 +84,14 @@ body {
   .gif {
     margin: 0 5px;
   }
-}
-
-@media only screen and (min-width: 992px) {
-  body {
-    color:yellow;
+  #search-form #search-term {
+    display: block;
+    width: 40%;
   }
-}
 
-@media only screen and (min-width: 1200px) {
-  body {
-    color:green;
+  #search-form #search-btn {
+    border-radius: 0px;
+    margin: 0 0 3px 0;
+    padding: 0px 10px;
   }
 }
