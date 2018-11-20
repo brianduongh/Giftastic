@@ -1,6 +1,6 @@
 # Giftastic
 
-An anime-themed gif generator built using jQuery and GIPHY's API. This project was built to demonstrate usage of jQuery, APIs, and dynamic elements.
+An anime-themed gif generator built using jQuery and GIPHY's API. This project was built to demonstrate usage of jQuery, APIs, and dynamic elements. This project can be viewed [here](https://brianduongh.github.io/Giftastic/).
 
 ## Features
 
