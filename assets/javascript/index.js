@@ -4,7 +4,7 @@ function displayGifs() {
   // Set API keys and variables
   var apiKey = 'GcvdVseivVehXTeUt9Onvn2JlpxuZEq6';
   var searchTerm = $(this).attr("data-name");
-  var queryUrl = "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + apiKey + "&limit=10";
+  var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + apiKey + "&limit=10";
   // Empty previous gifs
   $("#gif-bank").empty();
 
